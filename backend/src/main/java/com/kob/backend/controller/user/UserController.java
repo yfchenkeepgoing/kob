@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.kob.backend.mapper.UserMapper;
 import com.kob.backend.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,7 +55,10 @@ public class UserController {
             @PathVariable int userId,
             @PathVariable String username,
             @PathVariable String password) {
-        User user = new User(userId, username, password);
+        // 求密码加密后的结果
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        User user = new User(userId, username, encodedPassword); // 存入密文
         userMapper.insert(user);
         return "Add User Successfully";
     }
