@@ -28,6 +28,21 @@ export default {
       error(resp) {
         console.log(resp);
       }
+    });
+
+    $.ajax({
+      url: "http://127.0.0.1:3000/user/account/info/",
+      type: "get",
+      // 不需要传数据，但需要传表头
+      headers: {
+        Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMjdkMjRjMmJhNjk0ODgwOGU1NGY2ZWVkZGRkMDFkMiIsInN1YiI6IjIiLCJpc3MiOiJzZyIsImlhdCI6MTcxNzM0ODEwNSwiZXhwIjoxNzE4NTU3NzA1fQ.C0gNZ7EtZ8o9nZvwdKHq2BKyRSWY6ENy6bPPWYijgP0"
+      },
+      success(resp) {
+        console.log(resp);
+      },
+      error(resp) {
+        console.log(resp);
+      }
     })
   }
 }
