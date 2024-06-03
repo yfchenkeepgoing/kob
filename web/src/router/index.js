@@ -5,8 +5,6 @@ import RecordIndexView from './../views/record/RecordIndexView.vue'
 import RanklistIndexView from './../views/ranklist/RanklistIndexView.vue'
 import UserBotIndexView from './../views/user/bots/UserBotIndexView.vue'
 import NotFound from './../views/error/NotFound.vue'
-
-
 const routes = [
   // 根路径重定向到对战页面
   {
