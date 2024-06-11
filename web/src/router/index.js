@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // 引入5个页面
-import PkindexView from './../views/pk/PkindexView.vue'
+import PkindexView from '../views/pk/PkindexView.vue'
 import RecordIndexView from './../views/record/RecordIndexView.vue'
 import RanklistIndexView from './../views/ranklist/RanklistIndexView.vue'
 import UserBotIndexView from './../views/user/bots/UserBotIndexView.vue'
